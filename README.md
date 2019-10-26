@@ -1,1 +1,1 @@
-# workshop-data_manipulation_tidyverse
+# Data Manipulation with the *tidyverse*: *stringr*, *lubridate*, and *forcats*
