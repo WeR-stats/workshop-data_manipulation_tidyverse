@@ -1,0 +1,157 @@
+---
+title: "💻 <i>R</i> Workshop 💻"
+subtitle: "Data Manipulation with the <i>tidyverse</i>"
+author: "Luca Valnegri"
+output:
+  xaringan::moon_reader:
+    css: ["default", "metropolis", "metropolis-fonts", "https://datamaps.uk/helpers/xaringan/xari.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+layout: true
+<div class="wer-header"> <img class="logo" src="https://datamaps.uk/helpers/xaringan/logo_white.png"/> </div>
+<div class="wer-footer"> <span> &copy;2019 WeR meetup <br> https://github.com/WeR-stats/ </span> </div>
+
+```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+pkgs <- c('dplyr', 'knitr', 'forcats', 'hms', 'lubridate', 'stringr')
+invisible(lapply(pkgs, require, char = TRUE))
+geo_path <- 'https://datamaps.uk/geography/'
+data_path <- 'https://datamaps.uk/datasets/'
+bnd_path <- 'https://datamaps.uk/boundaries/uk/rds/'
+```
+
+---
+# *R* Data Types Recap
+
+
+
+
+
+---
+# *R* Data Manipulation Recap
+
+
+
+
+
+---
+# String Manipulation with *stringr*
+
+ - There are three string functions that are closely related to their base *R* equivalents, but with a few enhancements:
+    - Concatenation with `str_c()`
+    - Number of characters with `str_length()`
+    - Substring with `str_sub()`
+
+--
+  
+ - `str_c()` is equivalent to the `paste()` function
+
+--
+
+ - `str_length()` is similiar to the `nchar()` function; however, `str_length()` behaves more appropriately with missing values `NA`
+
+---
+# String Manipulation with *stringr*
+
+ - A new functionality that *stringr* provides in which *base R* does not have a specific function for is character duplication using `str_dup(x, times = n)`
+
+--
+
+ - `str_trim(text, side = )` can be used to remove white spaces
+
+--
+
+ - `str_pad()` to add whitespace, or to pad a string with characters
+
+---
+# Date Manipulation with *lubridate*
+
+ - allows easier manipulation of dates
+
+--
+
+ - one of the many benefits of the *lubridate* package is that it automatically recognizes the common separators used when recording dates ("-", "/", ".", and ""). 
+ 
+--
+
+ - as a result, you only need to focus on specifying the order of the date elements to determine the parsing function applied
+
+---
+# Date Manipulation with *lubridate*
+
+ - includes a range of function for easier extraction of date elements:
+ 
+   `year`, `month`, `week`, `yday`, `mday`, `wday`, `hour`, `minute`, `second()`
+
+--
+
+ - you can easily create a sequence of dates like:
+ 
+   `seq(ymd("2010-1-1"), ymd("2015-1-1"), by = "years")`
+
+
+---
+# Time Manipulation with *hms*
+
+
+
+
+---
+# Factor Manipulation with *forcats*
+
+ - *R* uses factors to handle categorical variables, variables that have a fixed and known set of possible values. 
+
+--
+
+ - The goal of the forcats package is to provide a suite of tools that solve common problems with factors, often related to changing the order of the levels
+
+--
+
+ - `fct_reorder()` to reorder a factor using another variable
+
+--
+
+ - `fct_infreq()` to reordering a factor by the frequency of its values
+
+---
+# Factor Manipulation with *forcats*
+
+
+ - `fct_relevel()` for changing the order of a factor by hand
+
+--
+
+ - `fct_lump()` to collapse the least/most frequent values of a factor into some *other* category
+
+
+---
+# Resources
+
+--
+
+ - [Cheat Sheet]()
+ 
+--
+
+ - [Reference]()
+ 
+--
+
+ - [RStudio Tutorials]()
+
+--
+
+ - [Datacamp Skill Track]()
+
+
+---
+# Thank You!
+
+ - [`r icon::fa("twitter")` @datamaps](https://twitter.com/datamaps)
+
+ - [`r icon::fa("github")` lvalnegri](https://github.com/lvalnegri)
+ 
+ - [`r icon::fa("linkedin")` Luca Valnegri](https://www.linkedin.com/in/lucavalnegri)
